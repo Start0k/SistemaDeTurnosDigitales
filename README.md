@@ -1,39 +1,10 @@
 ## Sistema de Gestion de Turnos Digitales
 
 ### Descripcion General del Sistema
-Este proyecto corresponde al modelado arquitectónico completo de un Sistema de Gestión de Turnos Digitales (Tunomático), diseñado para optimizar y digitalizar la asignación de turnos en instituciones que requieren un flujo ordenado de atención, tales como clínicas, bancos, oficinas públicas y centros de servicios.
-
-El objetivo principal del sistema es garantizar una experiencia eficiente, equitativa y trazable en la atención al público, mediante una plataforma adaptable, segura y fácil de operar tanto para usuarios como para administradores.
-
-El sistema contempla funcionalidades clave como:
-
-- Generación automatizada y manual de turnos por tipo de servicio.
-
-- Priorización de turnos especiales (por edad, discapacidad, emergencia, etc.).
-
-- Visualización en tiempo real de turnos activos y estados de atención.
-
-- Administración de módulos de atención y personal asignado.
-
-- Estadísticas de atención y tiempos promedio por módulo o servicio.
-
-- Notificaciones visuales y/o sonoras en pantallas conectadas.
-
-- Acceso diferenciado para usuarios, operadores y administradores del sistema.
-
-- Escalabilidad para operar en múltiples sucursales o sedes de forma centralizada.
-
-Este modelado abarca desde la visión funcional (mediante casos de uso UML) hasta la arquitectura física del sistema (diagrama de implementación UML), aplicando buenas prácticas de diseño orientado a objetos y utilizando patrones de diseño reconocidos como Singleton, Prototype, Adapter y Bridge, según corresponda.
+En este proyecto se presentará el modelado arquitectónico completo de un sistema de turnos digitales, diseñado para optimizar la asignación de turnos y adaptarlo a un entorno digitalizado. El objetivo principal del sistema es mejorar la experiencia de atención al público mediante una aplicación intuitiva, segura y fácil de operar. Este modelado abarca una visión funcional basada en casos UML, aplicando buenas prácticas en el diseño y empleando patrones de arquitectura como Singleton, Prototype y Adapter.
 ### Objetivos del modelado
-El presente trabajo tiene como finalidad ejercitar un enfoque integral de ingeniería de software, abordando todas las capas de abstracción de un sistema, desde su definición funcional hasta su arquitectura física. Los objetivos específicos del modelado son:
-
-Desarrollar una transición completa desde la visión funcional hasta el despliegue físico, comenzando con los requerimientos del sistema (mediante casos de uso UML) y culminando en una arquitectura implementable y escalable.
-
-Aplicar patrones de diseño reconocidos (Singleton, Prototype, Adapter, Bridge) en la construcción del modelo lógico (diagrama de clases), asegurando una arquitectura robusta, mantenible y orientada a la reutilización.
-
-Ejercitar el pensamiento arquitectónico mediante la correcta separación de responsabilidades, fomentando la modularidad del sistema, la escalabilidad futura y la facilidad de integración con otros sistemas o tecnologías.
-
-Este enfoque permite reflejar una solución madura y profesional a una problemática real, sirviendo como base sólida para una eventual implementación técnica en entornos productivos.
+- Aplicar Patrones de Diseño en la arquitectura, siguiendo buenas practicas.
+- Fomentar el pensamiento arquitectonico con el objetivo de construir un sistema robusto capaz de adaptarse al futuro.- -
 
 ### Diagrama de Caso de Uso UML
 ![](https://github.com/Start0k/SistemaDeTurnosDigitales/blob/ea22ebd0498ccabc7cd0fea19ee71a509f8aa007/imagenes/Caso%20de%20Uso.png)
@@ -82,7 +53,8 @@ Evitar múltiples puntos de configuración que pudieran provocar errores operaci
 
 ##### Prototype (Turno)
 
-Justificación: La operación de solicitud de turnos exige rapidez y eficiencia en la gestión de turnos repetitivos. Se implementó Prototype para permitir la clonación de turnos base, permitiendo a los operadores agilizar las operaciones sin recrear turnos desde cero.
+##### Justificación: 
+La operación de solicitud de turnos exige rapidez y eficiencia en la gestión de turnos repetitivos. Se implementó Prototype para permitir la clonación de turnos base, permitiendo a los operadores agilizar las operaciones sin recrear turnos desde cero.
 
 ##### Intención arquitectónica:
 
@@ -94,7 +66,8 @@ Facilitar la parametrización de campañas o protocolos especiales.
 
 ##### Adapter (Correo y Mensaje)
 
-Justificación: Dado que el sistema debe notificar a los clientes, el uso de Adapter fue clave para desacoplar el núcleo del sistema de las APIs de notificación externas, permitiendo mantener la flexibilidad en caso de cambios o actualizaciones en los sistemas de notificación.
+##### Justificación:
+Dado que el sistema debe notificar a los clientes, el uso de Adapter fue clave para desacoplar el núcleo del sistema de las APIs de notificación externas, permitiendo mantener la flexibilidad en caso de cambios o actualizaciones en los sistemas de notificación.
 
 ##### Intención arquitectónica:
 
@@ -109,24 +82,10 @@ Permitir la adaptación a distintos sistemas externos sin impactar el dominio.
 #### Despliegue Físico y decisiones técnicas:
 Para garantizar la seguridad, escalabilidad y disponibilidad del sistema, se han tomado las siguientes decisiones en el despliegue físico:
 
-##### Nodos físicos diferenciados:
-Se establecieron servidores dedicados para cada función clave del sistema, reforzando la separación de responsabilidades y minimizando riesgos. Esto permite distribuir la carga de trabajo y mejorar la resiliencia ante fallos.
+- Nodos físicos diferenciados para reforzar seguridad, escalabilidad y disponibilidad del sistema de turnos digitales.
 
-##### Separación clara de responsabilidades:
+- Separación clara de responsabilidades entre servidores de aplicaciones, configuración, gestión de turnos, y bases de datos.
 
-- Servidor de aplicaciones: Maneja la lógica del sistema y las interacciones de los usuarios.
+- Uso de protocolos estándar (REST, SOAP) en las integraciones externas, incluyendo sistemas de notificación y ERP hospitalario.
 
-- Servidor de configuración: Gestiona parámetros críticos y ajustes globales.
-
-- Servidor de integración ERP: Facilita la comunicación con sistemas externos como el ERP hospitalario.
-
-- Servidor de bases de datos: Asegura el almacenamiento y consulta eficiente de la información.
-
-##### Uso de protocolos estándar en integraciones externas: 
-Se adoptaron REST y SOAP para garantizar la interoperabilidad con otros sistemas, asegurando comunicación segura y estructurada con el ERP y otros servicios externos.
-
-##### Aislamiento de componentes críticos:
-
-- Configuración del sistema (ConfiguracionSistema): Se aloja en un nodo dedicado para reforzar la estabilidad y el control de cambios.
-
-- Seguridad: Implementación de medidas de acceso restringido y auditorías periódicas para mitigar riesgos.
+- Aislamiento de componentes críticos (como la gestión de configuración de turnos) en nodos dedicados para reforzar el control de cambios y estabilidad del sistema.
