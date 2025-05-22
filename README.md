@@ -36,7 +36,7 @@ Ejercitar el pensamiento arquitectónico mediante la correcta separación de res
 Este enfoque permite reflejar una solución madura y profesional a una problemática real, sirviendo como base sólida para una eventual implementación técnica en entornos productivos.
 
 ### Diagrama de Caso de Uso UML
-#Inserte Imagen David No te olvides
+![](https://github.com/Start0k/SistemaDeTurnosDigitales/blob/ea22ebd0498ccabc7cd0fea19ee71a509f8aa007/imagenes/Caso%20de%20Uso.png)
 #### Descripcion General
 El análisis funcional del Sistema Tunomático permitió identificar de forma clara los actores involucrados y los casos de uso esenciales para la gestión eficiente de turnos digitales. Se utilizaron relaciones `<<include>>` y `<<extend>>` siguiendo buenas prácticas de modelado UML, lo que permitió representar con precisión los flujos obligatorios y opcionales del sistema.
 #### Actores Identificados
