@@ -37,7 +37,8 @@ Administrador: Usuario con privilegios avanzados para gestionar usuarios del sis
 ![](https://github.com/Start0k/SistemaDeTurnosDigitales/blob/e889136a0d933eda857a14469e9e0353385be89f/imagenes/Diagrama%20de%20Clases.png)
 #### Justificación Arquitectónica y Patrones Aplicados
 ##### Selección de patrones
-La elección de los patrones de diseño no fue arbitraria, sino estratégica y alineada a las necesidades específicas del sistema y sus desafíos técnicos.
+
+La eleccion de los patrones de diseños fue escogida segun la necesidad del sistema para que cumpla con las necesidades del sistema.
 
 ##### Singleton (Administrador)
 
