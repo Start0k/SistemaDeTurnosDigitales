@@ -63,7 +63,7 @@ Administrador: Usuario con privilegios avanzados para gestionar usuarios del sis
 - `<<include>>` Validar Datos: el recepcionista siempre debe confirmar la identidad del cliente antes de continuar.
 
 ### Diagrama de Clases UML con Patrones Aplicados
-![]()
+![](https://github.com/Start0k/SistemaDeTurnosDigitales/blob/e889136a0d933eda857a14469e9e0353385be89f/imagenes/Diagrama%20de%20Clases.png)
 #### Justificación Arquitectónica y Patrones Aplicados
 ##### Selección de patrones
 La elección de los patrones de diseño no fue arbitraria, sino estratégica y alineada a las necesidades específicas del sistema y sus desafíos técnicos.
@@ -105,7 +105,7 @@ Facilitar el mantenimiento y evolución del sistema de integración.
 Permitir la adaptación a distintos sistemas externos sin impactar el dominio.
 
 ### Diagrama de Implementacion UML
-![]()
+![](https://github.com/Start0k/SistemaDeTurnosDigitales/blob/e889136a0d933eda857a14469e9e0353385be89f/imagenes/Implementacion.png)
 #### Despliegue Físico y decisiones técnicas:
 Para garantizar la seguridad, escalabilidad y disponibilidad del sistema, se han tomado las siguientes decisiones en el despliegue físico:
 
